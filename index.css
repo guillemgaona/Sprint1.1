@@ -43,9 +43,10 @@ header {
     flex: 1;
     background-color: yellow;
     text-align: left;
-    padding: 20px;
+    padding: 10px;
     font-size: 24px;
     font-weight: bold;
+    border: 10px solid orange;
 }
 
 .main {
@@ -60,6 +61,8 @@ header {
     flex: 3; /*perqè ocupi més que la publi */
     display: grid;
     gap: 10px;
+    background-color: #252850;
+    border: 20px solid #252850;
 }
 
 .article {
@@ -81,6 +84,7 @@ header {
     flex-direction: column;
     gap: 10px;
     background-color: red;
+    padding: 10px;
 }
 
 .publicidad div {
@@ -122,7 +126,7 @@ footer {
         padding: 10px;
         margin-top: 20px;
     }
-
+}
 @media(max-width: 768px) {
 
     .top-bar div {
@@ -143,5 +147,4 @@ footer {
         margin-top: 20px;
 
     }
-}
 }
