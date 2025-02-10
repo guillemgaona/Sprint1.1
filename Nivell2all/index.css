@@ -1,0 +1,257 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    color: black;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+header {
+    background-image: url("img/header.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.top-bar {
+    display: flex; /* per posar-los en ordre */
+    justify-content: space-between;
+    padding: 10px;
+    gap: 10px;
+    align-items: center;
+}
+
+.logo-img {
+    width: 100px;
+    height: auto; /* Manté la proporció del logotip */
+    max-width: 100%; 
+    animation: bounceIn 2s ease-out;
+}
+
+.logo {
+    flex: 1; /* Ocupa el mateix espai */
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.social {
+    flex: 1; /* Ocupa el mateix espai */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav {
+    flex: 2; /* Ocupa el doble d'espai */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav a, .social a {
+    color: grey;
+    text-decoration: none; /* Elimina subratllat */
+}
+
+.nav a:hover, .social a:hover {
+    color: darkgrey; /* Canvia a un gris més fosc quan es passa el ratolí per sobre */
+}
+
+.nav i, .social i {
+    margin: 5px; /* Espai entre la icona i el text */
+}
+
+.banner-container {
+    padding: 50px;
+    display: flex;
+    background-color: rgba(128, 128, 128, 0.2);
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 65px;
+    margin-bottom: 0;
+}
+
+.banner {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: monospace, sans-serif;
+    color: orange;
+    opacity: 0.5;
+    animation: fadeIn 2s ease-out;
+}
+
+.main {
+    display: flex; /*em fa dos contenidors i em deixa posar la publicitat a la dreta al ser l'últim*/
+    gap: 10px;
+    margin: 10px auto; /* adalt i abaix 10px costats auto o 0*/   
+}
+
+.articles {
+    flex: 3; /*perqè ocupi més que la publi */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnes */
+    gap: 20px;
+    background-color: #d3d3d3;
+    padding: 10px;
+}
+
+.article {
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.image-container {
+    position: relative; /* Permet que la data es posicioni relativament a aquest contenidor */
+}
+
+.article-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.article-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.article-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 0;
+    color: #ffffff;
+    background-color: salmon;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+.article-date {
+    position: absolute; /* Posiciona la data sobre la imatge */
+    bottom: 0px;
+    left: 10px; /* Distància des de l'esquerra */
+    color: yellow;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.article-text {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.navegacion {
+    background-color: #d3d3d3;
+    padding: 10px;
+    text-align: center;
+    grid-column: span 2; /* Ocupa les dues columnes */
+}
+
+.publicidad {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #d3d3d3;
+    padding: 10px;
+}
+.publicidad h1 {
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
+}
+
+.publicidad div {   
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
+}
+
+footer {
+    background-color: #efefef;
+    color: #d3d3d3;
+    padding: 10px;
+    text-align: center;
+}
+
+@media(max-width: 1024px) {
+    .top-bar {
+        flex-direction: column;
+    }
+
+    .banner {
+        padding: 10px;
+    }
+
+    .main {
+        flex-direction: column;
+    }
+
+    .articles {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnes */       
+    }
+
+    .navegacion {
+        grid-column: span 2;
+    }
+
+    .publicidad {
+        padding: 10px;
+        margin-top: 20px;
+    }
+}
+@media(max-width: 768px) {
+
+    .top-bar div {
+        margin: 2px;
+    }
+    .main {
+        margin-top: 20px;
+    }
+    .articles {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+    .navegacion {
+        grid-column: span 1;
+    }
+    footer {
+        padding: 10px;
+        margin-top: 20px;
+
+    }
+}
